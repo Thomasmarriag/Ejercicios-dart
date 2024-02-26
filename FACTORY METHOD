@@ -1,0 +1,197 @@
+EJERCICIO #1
+
+
+void main() {
+Fabrica fabrica = Fabrica();
+Personaje personaje = fabrica.fabper("Goku");
+ personaje.saltar();
+ personaje.correr();
+ personaje.golpear();
+}
+class Fabrica{
+  Personaje fabper(String tipo){
+    if(tipo == "Goku"){
+      return Goku();
+    }else if (tipo == "superman"){
+      return Superman();
+    }else {
+      return Batman();
+    }
+  }
+}
+abstract class Personaje{
+  void saltar();
+  void correr();
+  void golpear();
+}
+class Goku implements Personaje{
+  @override
+  void saltar(){
+    print("goku salta");
+  }
+    @override
+  void golpear(){
+    print("goku golpea");
+  }
+    @override
+  void correr(){
+    print("goku corre");
+  }
+ 
+}
+  class Superman implements Personaje{
+  @override
+  void saltar(){
+    print("Superman salta");
+  }
+    @override
+  void golpear(){
+    print("Superman golpea");
+  }
+    @override
+  void correr(){
+    print("Superman corre");
+  }
+ 
+}
+class Batman implements Personaje{
+  @override
+  void saltar(){
+    print("Batman salta");
+  }
+    @override
+  void golpear(){
+    print("Batman golpea");
+  }
+    @override
+  void correr(){
+    print("Batman corre");
+  }
+}
+
+
+
+
+
+EJERCICIO #2
+
+void main(){
+  Fabrica fabrica = Fabrica();
+  Basedato basedato = fabrica.obtenerconex("Mysql");
+  basedato.conectar();
+  basedato.desconectar();
+  basedato.consultar();
+}
+
+class Fabrica{
+  Basedato obtenerconex(String tipo){
+    if (tipo == "Mysql"){
+      return Mysql();
+    }else{
+      return Oracle();
+    }
+  }
+}
+
+abstract class Basedato{
+  void conectar();
+  void desconectar();
+  void consultar();
+}
+class Mysql implements Basedato{
+  @override
+  void conectar(){
+    print("dispositivo conectado");
+  }
+    @override
+  void desconectar(){
+    print("dispositivo desconectado");
+  }
+    void consultar(){
+    print("consultando");
+  }
+}
+
+class Oracle implements Basedato{
+  @override
+  void conectar(){
+    print("dispositivo conectado");
+  }
+    @override
+  void desconectar(){
+    print("dispositivo desconectado");
+  }
+    void consultar(){
+    print("consultando");
+  }
+}
+
+
+
+
+EJERCICIO #3
+
+void main() {
+Fabrica fabrica = Fabrica();
+  Bd bd = fabrica.obtconex("Local");
+  bd.conectar();
+}
+class Fabrica{
+  Bd obtconex(String tipo){
+    if(tipo == "Remota"){
+      return Remota();
+    }else{
+      return Local();
+    }
+  }
+}
+abstract class Bd {
+  void conectar();
+}
+class Remota implements Bd{
+  @override
+  void conectar(){
+    print("base de datos conectada");
+  }
+}
+class Local implements Bd{
+  @override
+  void conectar(){
+    print("base de datos conectada");
+  }
+}
+
+
+
+
+EJERCICIO #3 Bool
+
+void main() {
+Fabrica fabrica = Fabrica();
+  Bd bd = fabrica.obtconex(true);
+  bd.conectar();
+}
+class Fabrica{
+  Bd obtconex(bool tipo){
+    if(tipo){
+      return Remota();
+    }else{
+      return Local();
+    }
+  }
+}
+abstract class Bd {
+  void conectar();
+}
+class Remota implements Bd{
+  @override
+  void conectar(){
+    print("base de datos conectada");
+  }
+}
+class Local implements Bd{
+  @override
+  void conectar(){
+    print("base de datos conectada");
+  }
+}
