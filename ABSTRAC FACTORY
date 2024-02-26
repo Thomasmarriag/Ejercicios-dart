@@ -1,0 +1,226 @@
+EJERCICIO #1
+
+
+void main() {
+  Fabrica f = Fadeportivo();
+  Carro c = f.hacerace();
+  c.acelerar();
+  
+
+}
+abstract class Fabrica{
+  Carro hacerace();
+  Moto haceacel();
+}
+class Fadeportivo implements Fabrica{
+  @override
+  Moto haceacel() {
+    return Mdeportivo();
+  }
+
+  @override
+  Carro hacerace() {
+    return Cdeportivo();
+  }
+}
+class Faclasico implements Fabrica{
+  @override
+  Moto haceacel() {
+    return Mclasica();
+  }
+
+  @override
+  Carro hacerace() {
+    return Cclasico();
+  }
+  
+}
+
+abstract class Carro {
+  void acelerar();
+}
+
+
+abstract class Moto{
+  void acelerar();
+}
+
+
+
+
+class Cdeportivo implements Carro{
+  @override
+  void acelerar() {
+  print("El carro deportivo acelera");
+  }
+}
+class Cclasico implements Carro{
+  @override
+  void acelerar() {
+  print("El carro clasico acelera");
+  }
+}
+
+
+
+
+
+
+
+class Mdeportivo implements Moto{
+  @override
+  void acelerar() {
+    print("La moto deportiva acelera");
+  }
+  
+}
+class Mclasica implements Moto{
+  @override
+  void acelerar() {
+    print("La moto clasica acelera");
+  }
+  
+}
+
+
+
+
+EJERCICIO #2
+
+void main() {
+  Fabrica f = Fmoderna();
+  Silla s = f.pintarsilla();
+  s.pintar();
+  
+}
+
+
+abstract class Fabrica{
+  Silla pintarsilla();
+  Sofa pintarsofa();
+  Mesilla pintarmesilla();
+}
+
+
+
+class Fdeco implements Fabrica {
+  @override
+  Mesilla pintarmesilla() {
+    return Mdeco();
+  }
+
+  @override
+  Silla pintarsilla() {
+    return Sdeco();
+  }
+
+  @override
+  Sofa pintarsofa() {
+    return  Sodeco();
+  }
+  
+}
+class Fmoderna implements Fabrica{
+  @override
+  Mesilla pintarmesilla() {
+    return  Mmoderna();
+  }
+
+  @override
+  Silla pintarsilla() {
+    return Smoderna();
+  }
+
+  @override
+  Sofa pintarsofa() {
+    return Somoderna();
+  }
+}
+class Fvictoriana implements Fabrica{
+  @override
+  Mesilla pintarmesilla() {
+    return Mvictoriana();
+  }
+
+  @override
+  Silla pintarsilla() {
+    return Svictoriana();
+  }
+
+  @override
+  Sofa pintarsofa() {
+    return Sovictoriana();
+  }
+  
+}
+
+
+
+
+abstract class Silla{
+  void pintar();
+}
+abstract class Sofa{
+  void pintar();
+}
+abstract class Mesilla{
+  void pintar();
+}
+
+class Sdeco implements Silla{
+  @override
+  void pintar() {
+    print("la silla deco esta pintada");
+  }
+}
+class Smoderna implements Silla{
+  @override
+  void pintar() {
+    print("la silla moderna esta pintada");
+  }
+}
+class Svictoriana implements Silla{
+  @override
+  void pintar() {
+    print("la silla victoriana esta pintada");
+  } 
+}
+
+class Sodeco implements Sofa{
+  @override
+  void pintar() {
+    print("la silla deco esta pintada");
+  }
+}
+class Somoderna implements Sofa{
+  @override
+  void pintar() {
+    print("la silla moderna esta pintada");
+  }
+}
+class Sovictoriana implements Sofa{
+  @override
+  void pintar() {
+    print("la silla victoriana esta pintada");
+  } 
+}
+
+class Mdeco implements Mesilla{
+  @override
+  void pintar() {
+    print("la silla deco esta pintada");
+  }
+}
+class Mmoderna implements Mesilla{
+  @override
+  void pintar() {
+    print("la silla moderna esta pintada");
+  }
+}
+class Mvictoriana implements Mesilla{
+  @override
+  void pintar() {
+    print("la silla victoriana esta pintada");
+  } 
+}
+
