@@ -1,0 +1,36 @@
+Ejecicio #1
+
+void main() {
+  Conexion con1 = Conexion.conexion;
+  Conexion con2 = Conexion.conexion;
+  
+  print(identical(con1,con2));
+  print(con1 == con2);
+}
+
+class Conexion{
+  static Conexion? _conexion;
+  
+  Conexion._();
+  
+  static Conexion get conexion => _conexion ??= Conexion._();
+}
+
+Ejecicio #2
+
+void main() {
+  Moto moto1 = Moto.moto;
+  Moto moto2 = Moto.moto;
+  Moto moto3 = Moto.moto;
+  
+  print(moto1 == moto2);
+  print(moto1 == moto3);
+}
+
+class Moto{
+  static Moto? _moto;
+  
+  Moto._();
+  
+  static Moto get moto => _moto ??= Moto._();
+}
