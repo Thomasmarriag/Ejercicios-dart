@@ -1,0 +1,43 @@
+void main() {
+  Payinterface p = Impucaradapter();
+  Map data = {"valor": 10, "cedula": 12345};
+  p.pagar(data);
+}
+
+abstract class Payinterface{
+  void pagar(Map map);
+}
+class Impucaradapter implements Payinterface{
+  Impuestocarro _impuestocarro = Impuestocarro();
+
+  @override
+  void pagar(Map map) {
+    int v = map["valor"];
+    int c = map["cedula"];
+    _impuestocarro.pagarimpuestocarro(v,c);
+  }
+  
+}
+
+class Impumotadapter implements Payinterface{
+  Impuestomoto _impuestomoto = Impuestomoto();
+
+  @override
+  void pagar(Map map) {
+    int va = map["valor"];
+    int ce = map["cedula"];
+    _impuestomoto.pagarimpuestomoto(va,ce);
+  }
+  
+}
+
+class Impuestocarro{
+  void pagarimpuestocarro(valor,cedula){
+    print("pago el impuesto del carro valor: $valor, cedula: $cedula.");
+  }
+}
+class Impuestomoto{
+  void pagarimpuestomoto(cedula,valor){
+    print("pago el impuesto del moto cedula: $cedula,valor: $valor.");
+  }
+}
